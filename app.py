@@ -26,7 +26,7 @@ def route_url():
         result = dict_result[result_]
 
 
-    return render_template("hello.html", result= result, request=request)
+    return render_template("formulaire.html", result= result, request=request)
 if __name__ == "__main__":
     app.run(debug=True)
 
