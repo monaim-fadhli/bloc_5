@@ -41,6 +41,6 @@ def route_url():
             return jsonify({"resultat de prediction": result})
 
 
-    return render_template("hello.html", result= result, request=request)
+    return render_template("formulaire", result= result, request=request)
 if __name__ == "__main__":
     app.run(debug=True)
