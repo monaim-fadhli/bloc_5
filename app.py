@@ -1,7 +1,7 @@
 import os
 import pickle
 
-from flask import Flask, render_template, request
+from flask import Flask, render_template, request, jsonify
 
 app = Flask(__name__)
 
@@ -17,17 +17,30 @@ def route_url():
     }
     result= None
     if request.method == "POST":
-        checking_type = int(request.form["checking type"])
-        engine_power_class = int(request.form["engine_power_class"])
-        paint_color = int(request.form["paint_color"])
-        has_gps = int(request.form["has_gps"])
-        rental_price_per_day = int(request.form["rental_price_per_day"])
+        # methode avec curl
+        if request.is_json:
+            data = request.get_json()
+            print(data)
+            checking_type = data["checking type"]
+            engine_power_class = data["engine_power_class"]
+            paint_color = data["paint_color"]
+            has_gps = data["has_gps"]
+            rental_price_per_day = data["rental_price_per_day"]
+
+        else:
+            # methode avec formulaire
+
+            checking_type = int(request.form["checking type"])
+            engine_power_class = int(request.form["engine_power_class"])
+            paint_color = int(request.form["paint_color"])
+            has_gps = int(request.form["has_gps"])
+            rental_price_per_day = int(request.form["rental_price_per_day"])
         result_ = model.predict([[checking_type, engine_power_class , paint_color , has_gps, rental_price_per_day]])[0]
         result = dict_result[result_]
+        if request.is_json:
+            return jsonify({"resultat de prediction": result})
 
 
-    return render_template("formulaire.html", result= result, request=request)
+    return render_template("hello.html", result= result, request=request)
 if __name__ == "__main__":
     app.run(debug=True)
-
-
