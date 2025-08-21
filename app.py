@@ -42,5 +42,8 @@ def route_url():
 
 
     return render_template("formulaire.html", result= result, request=request)
+@app.route("/docs", methods=["GET", "POST"])
+def documentation_url():
+    return render_template("documentation.html", request=request)
 if __name__ == "__main__":
     app.run(debug=True)
