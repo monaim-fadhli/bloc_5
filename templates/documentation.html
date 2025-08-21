@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Documentation a l'API</title>
+    <style>
+        body{
+        font-family: Arial, sans-serif;
+        margin: 40px;
+        background-color:#f4f4f4;
+        }
+        h1,h2{
+        color:#333;
+        }
+        .endpoint{
+        background: white;
+        border-left: 5px solid #3498db;
+        padding: 20px;
+        box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+        }
+        code{
+        background-color:#eee;
+        padding: 2px 4px;
+        font-size: 90%;
+        }
+        pre{
+        background:#eee;
+        padding: 10px;
+        overflow-x: auto;
+        }
+    </style>
+</head>
+<body>
+<h1 > Bienvenue sur la documentation de mon site web et mon API </h1>
+<p > Cette API permet de predire les locations de voitures, soit via une IHM (formulaire) ou bien via des call API   </p>
+<h2> Base url </h2>
+<p><code>https://bloc-5.onrender.com</code></p>
+<div class="endpoint">
+<h2 >1.Post /</h2>
+<p> <strong> Description :</strong>  ce point de terminaison permet predire une location de voiture (risqué ou non ) en se basant sur des données fournies
+    en json (API) ou bien saisie directement par l'utilisateur en utilisant le formulaire  </p>
+<h3> Requete</h3>
+<p><strong>Methode:</strong> post</p>
+<p><strong>URL:</strong> <code>https://bloc-5.onrender.com/</code> </p>
+<p><strong>En-tete:</strong></p>
+<ul>
+    <li><code>"Content-Type" = "application/json"</code> </li>
+</ul>
+<h4>Corps json attendu</h4>
+<pre>
+{
+    "checking type" : 0,
+    "engine_power_class" : 0,
+    "paint_color" : 5,
+    "has_gps" : 1,
+    "rental_price_per_day": 122
+}
+
+</pre>
+<h3>Reponse (succes)</h3>
+    <pre>
+    {
+        Prédiction: valeur prédit
+    }
+    </pre>
+
+</pre>
+<h3>Reponse (échec)</h3>
+    <pre>
+    {
+        error: invalid json
+    }
+    </pre>
+
+</div>
+<footer>
+    <p>© 2025 - API location de voiture </p>
+</footer>
+
+
+</body>
+
+</html>
+
