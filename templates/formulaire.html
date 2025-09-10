@@ -57,22 +57,22 @@
     <form method="post">
         <div class="form_groupe">
             <label for="mileage"> mileage:    </label> &nbsp;&nbsp;&nbsp;
-            <input type="number" name="mileage" placeholder="mileage" min = 0 max = 1 required>  <br><br>
+            <input type="number" name="mileage" placeholder="mileage"  required>  <br><br>
         </div>
 
         <div class="form_groupe">
-            <label for="engine_power"> engine_power_class:    </label>
-            <input type="number" name="engine_power_class" placeholder="engine_power_class" min = 0 max = 2 required><br><br>
+            <label for="engine_power"> engine_power:    </label>
+            <input type="number" name="engine_power" placeholder="engine_power"  required><br><br>
         </div>
 
         <div class="form_groupe">
             <label for="automatic_car_num"> automatic_car_num:    </label>
-            <input type="number" name="automatic_car_num" placeholder="automatic_car_num" min = 0 max = 9 required><br><br>
+            <input type="number" name="automatic_car_num" placeholder="automatic_car_num"  required><br><br>
         </div>
 
         <div class="form_groupe">
-            <label for="has_gps"> has_gps:    </label>
-            <input type="number" name="has_gps" placeholder="has_gps" min = 0 max = 1 required><br><br>
+            <label for="has_gps_num"> has_gps_num:    </label>
+            <input type="number" name="has_gps_num" placeholder="has_gps_num"  required><br><br>
         </div>
 
         <div class="form_groupe">
@@ -96,7 +96,7 @@
         <input type="submit" value="Predire">
     </form>
     {% if request.method == 'POST' and result is not none %}
-        <h2> prediction: {{result}}</h2>
+        <h2> prediction: {{result}} €</h2>
     {% endif %}
 
 </body>
