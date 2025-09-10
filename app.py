@@ -11,10 +11,7 @@ with open("golden GB for car_location", "rb") as fr:
 
 @app.route("/", methods=["GET", "POST"])
 def route_url():
-    dict_result =  {
-        0 : "Location non risque",
-        1 : "Location a risque"
-    }
+
     result= None
     if request.method == "POST":
         # methode avec curl
@@ -22,9 +19,9 @@ def route_url():
             data = request.get_json()
             print(data)
             mileage = data["mileage"]
-            engine_power_class = data["engine_power_class"]
+            engine_power = data["engine_power"]
+            has_gps_num = data["has_gps_num"]
             automatic_car_num = data["automatic_car_num"]
-            has_gps = data["has_gps"]
             has_getaround_connect_num = data["has_getaround_connect_num"]
             has_air_conditioning_num = data["has_air_conditioning_num"]
             has_speed_regulator_num = data["has_speed_regulator_num"]
@@ -33,15 +30,18 @@ def route_url():
         else:
             # methode avec formulaire
 
-            checking_type = int(request.form["checking type"])
-            engine_power_class = int(request.form["engine_power_class"])
-            paint_color = int(request.form["paint_color"])
-            has_gps = int(request.form["has_gps"])
-            rental_price_per_day = int(request.form["rental_price_per_day"])
-        result_ = model.predict([[checking_type, engine_power_class , paint_color , has_gps, rental_price_per_day]])[0]
-        result = dict_result[result_]
+            mileage = int(request.form["mileage"])
+            engine_power = int(request.form["engine_power"])
+            has_gps_num = int(request.form["has_gps_num"])
+            automatic_car_num = int(request.form["automatic_car_num"])
+            has_getaround_connect_num = int(request.form["has_getaround_connect_num"])
+            has_air_conditioning_num = int(request.form["has_air_conditioning_num"])
+            has_speed_regulator_num = int(request.form["has_speed_regulator_num"])
+            car_type_num = int(request.form["car_type_num"])
+        result = round(model.predict([[mileage, engine_power , has_gps_num , automatic_car_num, has_getaround_connect_num, has_air_conditioning_num, has_speed_regulator_num, car_type_num]])[0],2)
+
         if request.is_json:
-            return jsonify({"resultat de prediction": result})
+            return jsonify({"resultat de prediction (euros)": result})
 
 
     return render_template("formulaire.html", result= result, request=request)
