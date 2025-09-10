@@ -6,7 +6,7 @@ from flask import Flask, render_template, request, jsonify
 app = Flask(__name__)
 
 
-with open("golden svc for car_location", "rb") as fr:
+with open("golden GB for car_location", "rb") as fr:
     model = pickle.load(fr)
 
 @app.route("/", methods=["GET", "POST"])
@@ -21,11 +21,14 @@ def route_url():
         if request.is_json:
             data = request.get_json()
             print(data)
-            checking_type = data["checking type"]
+            mileage = data["mileage"]
             engine_power_class = data["engine_power_class"]
-            paint_color = data["paint_color"]
+            automatic_car_num = data["automatic_car_num"]
             has_gps = data["has_gps"]
-            rental_price_per_day = data["rental_price_per_day"]
+            has_getaround_connect_num = data["has_getaround_connect_num"]
+            has_air_conditioning_num = data["has_air_conditioning_num"]
+            has_speed_regulator_num = data["has_speed_regulator_num"]
+            car_type_num = data["car_type_num"]
 
         else:
             # methode avec formulaire
