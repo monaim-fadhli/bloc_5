@@ -56,39 +56,39 @@
     <h1> Formulaire check location </h1>
     <form method="post">
         <div class="form_groupe">
-            <label for="mileage"> mileage:    </label> &nbsp;&nbsp;&nbsp;
+            <label for="Mileage"> Mileage:    </label> &nbsp;&nbsp;&nbsp;
             <input type="number" name="mileage" placeholder="mileage"  required>  <br><br>
         </div>
 
         <div class="form_groupe">
-            <label for="engine_power"> engine_power:    </label>
+            <label for="Engine power"> Engine power:    </label>
             <input type="number" name="engine_power" placeholder="engine_power"  required><br><br>
         </div>
 
         <div class="form_groupe">
-            <label for="automatic_car_num"> automatic_car_num:    </label>
+            <label for="Automatic car num"> Automatic car num:    </label>
             <input type="number" name="automatic_car_num" placeholder="automatic_car_num"  required><br><br>
         </div>
 
         <div class="form_groupe">
-            <label for="has_gps_num"> has_gps_num:    </label>
+            <label for="Has gps num"> Has gps num:    </label>
             <input type="number" name="has_gps_num" placeholder="has_gps_num"  required><br><br>
         </div>
 
         <div class="form_groupe">
-            <label for="has_getaround_connect_num"> has_getaround_connect_num:    </label>
+            <label for="Has getaround connect num"> Has getaround connect num:    </label>
             <input type="number" name="has_getaround_connect_num" placeholder="has_getaround_connect_num" required><br><br>
 
         <div class="form_groupe">
-            <label for="has_air_conditioning_num"> has_air_conditioning_num:    </label>
+            <label for="Has air conditioning num"> Has air conditioning num:    </label>
             <input type="number" name="has_air_conditioning_num" placeholder="has_air_conditioning_num" required><br><br>
 
         <div class="form_groupe">
-            <label for="has_speed_regulator_num"> has_speed_regulator_num:    </label>
+            <label for="Has speed regulator num"> Has speed regulator num:    </label>
             <input type="number" name="has_speed_regulator_num" placeholder="has_speed_regulator_num" required><br><br>
 
         <div class="form_groupe">
-            <label for="car_type_num"> car_type_num:    </label>
+            <label for="car type num"> Car type num:    </label>
             <input type="number" name="car_type_num" placeholder="car_type_num" required><br><br>
         </div>
 
@@ -96,7 +96,7 @@
         <input type="submit" value="Predire">
     </form>
     {% if request.method == 'POST' and result is not none %}
-        <h2> prediction: {{result}} €</h2>
+        <h1> Prediction: {{result}} €</h1>
     {% endif %}
 
 </body>
