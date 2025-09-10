@@ -56,18 +56,18 @@
     <h1> Formulaire check location </h1>
     <form method="post">
         <div class="form_groupe">
-            <label for="checking type"> checking type:    </label> &nbsp;&nbsp;&nbsp;
-            <input type="number" name="checking type" placeholder="checking type" min = 0 max = 1 required>  <br><br>
+            <label for="mileage"> mileage:    </label> &nbsp;&nbsp;&nbsp;
+            <input type="number" name="mileage" placeholder="mileage" min = 0 max = 1 required>  <br><br>
         </div>
 
         <div class="form_groupe">
-            <label for="engine_power_class"> engine_power_class:    </label>
+            <label for="engine_power"> engine_power_class:    </label>
             <input type="number" name="engine_power_class" placeholder="engine_power_class" min = 0 max = 2 required><br><br>
         </div>
 
         <div class="form_groupe">
-            <label for="paint_color"> paint_color:    </label>
-            <input type="number" name="paint_color" placeholder="paint_color" min = 0 max = 9 required><br><br>
+            <label for="automatic_car_num"> automatic_car_num:    </label>
+            <input type="number" name="automatic_car_num" placeholder="automatic_car_num" min = 0 max = 9 required><br><br>
         </div>
 
         <div class="form_groupe">
@@ -75,11 +75,24 @@
             <input type="number" name="has_gps" placeholder="has_gps" min = 0 max = 1 required><br><br>
         </div>
 
+        <div class="form_groupe">
+            <label for="has_getaround_connect_num"> has_getaround_connect_num:    </label>
+            <input type="number" name="has_getaround_connect_num" placeholder="has_getaround_connect_num" required><br><br>
 
         <div class="form_groupe">
-            <label for="rental_price_per_day"> rental_price_per_day:    </label>
-            <input type="number" name="rental_price_per_day" placeholder="rental_price_per_day" required><br><br>
+            <label for="has_air_conditioning_num"> has_air_conditioning_num:    </label>
+            <input type="number" name="has_air_conditioning_num" placeholder="has_air_conditioning_num" required><br><br>
+
+        <div class="form_groupe">
+            <label for="has_speed_regulator_num"> has_speed_regulator_num:    </label>
+            <input type="number" name="has_speed_regulator_num" placeholder="has_speed_regulator_num" required><br><br>
+
+        <div class="form_groupe">
+            <label for="car_type_num"> car_type_num:    </label>
+            <input type="number" name="car_type_num" placeholder="car_type_num" required><br><br>
         </div>
+
+
         <input type="submit" value="Predire">
     </form>
     {% if request.method == 'POST' and result is not none %}
