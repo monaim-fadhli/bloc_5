@@ -32,12 +32,12 @@
 </head>
 <body>
 <h1 > Bienvenue sur la documentation de mon site web et mon API </h1>
-<p > Cette API permet de predire les locations de voitures, soit via une IHM (formulaire) ou bien via des call API   </p>
+<p > Cette API permet de predire les prix de locations de voitures, soit via une IHM (formulaire) ou bien via des call API   </p>
 <h2> Base url </h2>
 <p><code>https://bloc-5.onrender.com</code></p>
 <div class="endpoint">
 <h2 >1.Post /</h2>
-<p> <strong> Description :</strong>  ce point de terminaison permet predire une location de voiture (risqué ou non ) en se basant sur des données fournies
+<p> <strong> Description :</strong>  ce point de terminaison permet predire le prix optimal de location de voiture (risqué ou non ) en se basant sur des données fournies
     en json (API) ou bien saisie directement par l'utilisateur en utilisant le formulaire  </p>
 <h3> Requete</h3>
 <p><strong>Methode:</strong> post</p>
@@ -49,11 +49,14 @@
 <h4>Corps json attendu</h4>
 <pre>
 {
-    "checking type" : 0,
-    "engine_power_class" : 0,
-    "paint_color" : 5,
-    "has_gps" : 1,
-    "rental_price_per_day": 122
+            mileage : 10,
+            engine_power : 5,
+            has_gps_num : 1,
+            automatic_car_num : 1,
+            has_getaround_connect_num : 1,
+            has_air_conditioning_num : 0,
+            has_speed_regulator_num : 1,
+            car_type_num : 1,
 }
 
 </pre>
